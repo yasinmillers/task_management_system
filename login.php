@@ -22,7 +22,7 @@ header("location:index.php?page=home");
 <body class="hold-transition login-page bg-info">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?> - supervisor</b></a>
+    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?>Supervisor and Student</b></a>
     <img src="logo.png" alt="..." width="50%">
   </div>
   <!-- /.login-logo -->
