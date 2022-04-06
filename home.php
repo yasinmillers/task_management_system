@@ -65,11 +65,11 @@ if($_SESSION['login_type'] != 1)
                 $qry = $conn->query("SELECT * FROM project_list $where order by name asc");
                 while($row= $qry->fetch_assoc()):
                   $prog= 0;
-                $tprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']}")->num_rows;
-                $cprog = $conn->query("SELECT * FROM task_list where project_id = {$row['id']} and status = 3")->num_rows;
+                $tprog = $conn->query("SELECT *  FROM task_list where project_id = {$row['id']}")-> num_rows;
+                $cprog = $conn->query("SELECT *  FROM task_list where project_id = {$row['id']} and status = 3")-> num_rows;
                 $prog = $tprog > 0 ? ($cprog/$tprog) * 100 : 0;
                 $prog = $prog > 0 ?  number_format($prog,2) : $prog;
-                $prod = $conn->query("SELECT * FROM user_productivity where project_id = {$row['id']}")->num_rows;
+                $prod = $conn->query("SELECT *  FROM user_productivity where project_id = {$row['id']}")-> num_rows;
                 if($row['status'] == 0 && strtotime(date('Y-m-d')) >= strtotime($row['start_date'])):
                 if($prod  > 0  || $cprog > 0)
                   $row['status'] = 2;
