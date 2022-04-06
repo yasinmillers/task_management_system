@@ -15,7 +15,7 @@
 							<label for="" class="control-label">Last Name</label>
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
 						</div>
-						<?php if($_SESSION['login_type'] == 1): ?>
+						<?php //if($_SESSION['login_type'] == 1): ?>
 						<div class="form-group">
 							<label for="" class="control-label">User Role</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
@@ -24,9 +24,7 @@
 								<option value="1" <?php echo isset($type) && $type == 1 ? 'selected' : '' ?>>Supervisor</option>
 							</select>
 						</div>
-						<?php else: ?>
-							<input type="hidden" name="type" value="3">
-						<?php endif; ?>
+					
 						<div class="form-group">
 							<label for="" class="control-label">Avatar</label>
 							<div class="custom-file">
@@ -60,7 +58,7 @@
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
 					<button class="btn btn-primary mr-2">Register</button>
-					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=user_list'">Cancel</button>
+					<button class="btn btn-secondary" type="button" onclick="location.href = 'login.php'">Cancel</button>
 				</div>
 			</form>
 		</div>

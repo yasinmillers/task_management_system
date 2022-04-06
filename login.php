@@ -57,7 +57,7 @@ header("location:index.php?page=home");
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button class="btn btn-primary btn-block" type="button" onclick="location.href = 'register.php'">Cancel</button>
           </div>
           <!-- /.col -->
         </div>
