@@ -98,7 +98,7 @@ if($smt->execute()){
 		border-radius: 100% 100%;
 	}
 </style>
-<script>
+<!-- <script>
 	$('[name="password"],[name="cpass"]').keyup(function(){
 		var pass = $('[name="password"]').val()
 		var cpass = $('[name="cpass"]').val()
@@ -158,4 +158,4 @@ if($smt->execute()){
 			}
 		})
 	})
-</script>
+</script> -->
