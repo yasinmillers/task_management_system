@@ -23,7 +23,7 @@ header("location:index.php?page=home");
 <div class="login-box">
   <div class="login-logo">
     <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?>Supervisor and Student</b></a>
-    <img src="logo.png" alt="..." width="50%">
+    <!-- <img src="" alt="..." width="50%"> -->
   </div>
   <!-- /.login-logo -->
   <div class="card">
