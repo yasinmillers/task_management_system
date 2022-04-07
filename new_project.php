@@ -17,9 +17,9 @@
 				<div class="form-group">
 					<label for="">Status</label>
 					<select name="status" id="status" class="custom-select custom-select-sm">
-						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Idea</option>
-						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>Proposal</option>
-						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Report</option>
+						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
+						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>On-Hold</option>
+						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Done</option>
 					</select>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
     	</div>
     	<div class="card-footer border-top border-info">
     		<div class="d-flex w-100 justify-content-center align-items-center">
-    			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Submit</button>
+    			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-project">Save</button>
     			<button class="btn btn-flat bg-gradient-secondary mx-2" type="button" onclick="location.href='index.php?page=project_list'">Cancel</button>
     		</div>
     	</div>
