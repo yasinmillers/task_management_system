@@ -8,6 +8,7 @@ $email = mysqli_real_escape_string($conn, $_POST['email']);
 $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']); 
+}
 if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
 $name_error = "Name must contain only alphabets and space";
 }
@@ -31,8 +32,6 @@ $cpassword_error = "Password and Confirm Password doesn't match";
 }
  
 $query = "INSERT INTO students(name,regno,program, email, mobile ,password) VALUES('" . $name . "', '" . $regno . "','" . $program . "','" . $email . "', '" . $mobile . "', '" . md5($password) . "')"
-header("location: login.php");
-exit();
 
 
 ?>
