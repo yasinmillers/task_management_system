@@ -9,8 +9,8 @@ $lastname=$_POST['lastname'];
 $type=$_POST['type'];
 $email=$_POST['email'];
 $password=$_POST['password'];
-$smt=$conn->prepare("INSERT into user(firstname,)values(?,?,?,?,?,?)");
-$smt->bind_param("ssssss",$firstname,);
+$smt=$conn->prepare("INSERT into user(firstname,lastname,email,password,type,avator)values(?,?,?,?,?,?)");
+$smt->bind_param($firstname,$lastname,$email,$password,$type,$imge_name,);
 if($smt->execute()){
 
     move_uploaded_file($_FILES["img"]["temp_name"],$upload_path);
