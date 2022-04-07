@@ -1,6 +1,6 @@
 <?php
 require 'db_connect.php';
-if(isset($_POST)){
+if(isset($_POST['Save'])){
     $imge_name=$_FILES["img"]["name"];
     $formated_name=mt_rand(100,999).$imge_name;
     $upload_path="assets/uploads/".basename($formated_name);
