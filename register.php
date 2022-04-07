@@ -29,16 +29,12 @@ $mobile_error = "Mobile number must be minimum of 10 characters";
 if($password != $cpassword) {
 $cpassword_error = "Password and Confirm Password doesn't match";
 }
-if (!$error) {
-if(mysqli_query($conn, "INSERT INTO students(name,regno,program, email, mobile ,password) VALUES('" . $name . "', '" . $regno . "','" . $program . "','" . $email . "', '" . $mobile . "', '" . md5($password) . "')")) {
+ 
+$query = "INSERT INTO students(name,regno,program, email, mobile ,password) VALUES('" . $name . "', '" . $regno . "','" . $program . "','" . $email . "', '" . $mobile . "', '" . md5($password) . "')"
 header("location: login.php");
 exit();
-} else {
-echo "Error: " . $sql . "" . mysqli_error($conn);
-}
-}
-mysqli_close($conn);
-}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
