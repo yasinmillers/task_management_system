@@ -1,4 +1,21 @@
 <?php
+require 'db_connect.php';
+if(isset($_POST)){
+    $imge_name=$_FILES["img"]["name"];
+    $formated_name=mt_rand(100,999).$imge_name;
+    $upload_path="assets/uploads/".basename($formated_name);
+$firstname=$_POST['fistname'];
+$smt=$conn->prepare("INSERT into user(firstname,)values(?,?,?,?,?,?)");
+$smt->bind_param("ssssss",$firstname,);
+if($smt->execute()){
+
+    move_uploaded_file($_FILES["img"]["temp_name"],$upload_path);
+
+
+
+}
+
+}
 ?>
 <head>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -6,7 +23,7 @@
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-body">
-			<form action="" id="manage_user">
+			<form action="" id="manage_user" method="POST" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 				<div class="row">
 					<div class="col-md-6 border-right">
@@ -62,7 +79,7 @@
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
-					<button class="btn btn-primary mr-2">Save</button>
+					<button class="btn btn-primary mr-2" type="submit">Save</button>
 					<button class="btn btn-secondary" type="button" onclick="location.href = 'login.php'">Cancel</button>
 				</div>
 			</form>
