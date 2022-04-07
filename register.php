@@ -5,6 +5,10 @@ if(isset($_POST)){
     $formated_name=mt_rand(100,999).$imge_name;
     $upload_path="assets/uploads/".basename($formated_name);
 $firstname=$_POST['fistname'];
+$lastname=$_POST['lastname'];
+$type=$_POST['type'];
+$email=$_POST['email'];
+$password=$_POST['password'];
 $smt=$conn->prepare("INSERT into user(firstname,)values(?,?,?,?,?,?)");
 $smt->bind_param("ssssss",$firstname,);
 if($smt->execute()){
@@ -45,7 +49,7 @@ if($smt->execute()){
 							</select>
 						</div>
 						
-							<input type="hidden" name="type" value="3">
+						
 						
 						<div class="form-group">
 							<label for="" class="control-label">Avatar</label>
