@@ -1,5 +1,5 @@
 <?php
-require_once "connect.php";
+require_once "db_connect.php";
 if (isset($_POST['signup'])) {
 $name = mysqli_real_escape_string($conn, $_POST['name']);
 $regno = mysqli_real_escape_string($conn, $_POST['regno']);
