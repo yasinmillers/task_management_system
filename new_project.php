@@ -17,9 +17,9 @@
 				<div class="form-group">
 					<label for="">Status</label>
 					<select name="status" id="status" class="custom-select custom-select-sm">
-						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
-						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>On-Hold</option>
-						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Done</option>
+						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Idea</option>
+						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>Proposal</option>
+						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Report</option>
 					</select>
 				</div>
 			</div>
