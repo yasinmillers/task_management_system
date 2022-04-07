@@ -1,5 +1,8 @@
 <?php
 ?>
+<head>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <div class="col-lg-12">
 	<div class="card">
 		<div class="card-body">
@@ -15,7 +18,7 @@
 							<label for="" class="control-label">Last Name</label>
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
 						</div>
-						<?php if($_SESSION['login_type'] == 1): ?>
+						
 						<div class="form-group">
 							<label for="" class="control-label">User Role</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
@@ -24,9 +27,9 @@
 								<option value="1" <?php echo isset($type) && $type == 1 ? 'selected' : '' ?>>student</option>
 							</select>
 						</div>
-						<?php else: ?>
+						
 							<input type="hidden" name="type" value="3">
-						<?php endif; ?>
+						
 						<div class="form-group">
 							<label for="" class="control-label">Avatar</label>
 							<div class="custom-file">
