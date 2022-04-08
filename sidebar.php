@@ -30,7 +30,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-            <?php if($_SESSION['login_type'] != 3): ?>
+            <?php if($_SESSION['login_type'] != 2): ?>
               <li class="nav-item">
                 <a href="./index.php?page=new_project" class="nav-link nav-new_project tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
@@ -56,7 +56,7 @@
            <li class="nav-item">
                 <a href="./index.php?page=reports" class="nav-link nav-reports">
                   <i class="fas fa-th-list nav-icon"></i>
-                  <p>Report</p>
+                  <p>Summary</p>
                 </a>
           </li>
           <?php endif; ?>
@@ -65,7 +65,7 @@
             <a href="#" class="nav-link nav-edit_user">
               <i class="nav-icon fas fa-users"></i>
               <p>
-                Users
+                Students
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
