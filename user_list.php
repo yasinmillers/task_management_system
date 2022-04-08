@@ -20,7 +20,7 @@
 				<tbody>
 					<?php
 					$i = 1;
-					$type = array('',"Admin","Project Manager","Employee");
+					$type = array('',"Student","Project Supervisor","Student");
 					$qry = $conn->query("SELECT *,concat(firstname,' ',lastname) as name FROM users order by concat(firstname,' ',lastname) asc");
 					while($row= $qry->fetch_assoc()):
 					?>
@@ -36,9 +36,9 @@
 		                    <div class="dropdown-menu" style="">
 		                      <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">View</a>
 		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Edit</a>
-		                      <div class="dropdown-divider"></div>
-		                      <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+		                      <!-- <a class="dropdown-item" href="./index.php?page=edit_user&id=<?php echo $row['id'] ?>">Edit</a> -->
+		                      <!-- <div class="dropdown-divider"></div>
+		                      <a class="dropdown-item delete_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a> -->
 		                    </div>
 						</td>
 					</tr>	
