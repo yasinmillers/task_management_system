@@ -1,24 +1,25 @@
 <?php
 require 'db_connect.php';
 if(isset($_POST['Save'])){
+    
     $imge_name=$_FILES["img"]["name"];
     $formated_name=mt_rand(100,999).$imge_name;
     $upload_path="assets/uploads/".basename($formated_name);
-$firstname=$_POST['fistname'];
+$firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
 $type=$_POST['type'];
 $email=$_POST['email'];
-$password=$_POST['password'];
-$smt=$conn->prepare("INSERT into user(firstname,lastname,email,password,type,avator)values(?,?,?,?,?,?)");
-$smt->bind_param($firstname,$lastname,$email,$password,$type,$imge_name,);
+$password=md5($_POST['password']);
+$smt=$conn->prepare("INSERT into users(firstname,lastname,email,password,type,avatar)values(?,?,?,?,?,?)");
+$smt->bind_param("ssssss",$firstname,$lastname,$email,$password,$type,$formated_name);
 if($smt->execute()){
 
     move_uploaded_file($_FILES["img"]["temp_name"],$upload_path);
-
-
-
+    header("location: login.php");
 }
-
+else{
+    echo "iii";
+}
 }
 ?>
 <head>
@@ -83,7 +84,7 @@ if($smt->execute()){
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
-					<button class="btn btn-primary mr-2" type="submit">Save</button>
+					<button class="btn btn-primary mr-2" type="submit" name="Save">Save</button>
 					<button class="btn btn-secondary" type="button" onclick="location.href = 'login.php'">Cancel</button>
 				</div>
 			</form>

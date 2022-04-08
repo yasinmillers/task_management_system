@@ -49,7 +49,7 @@ if(isset($_GET['id'])){
 				</div>
 				<div class="col-md-7">
 					<div class="form-group">
-						<label for="">Comment/Progress Description</label>
+						<label for="">Comment/Progress Marks</label>
 						<textarea name="comment" id="" cols="30" rows="10" class="summernote form-control" required="">
 							<?php echo isset($comment) ? $comment : '' ?>
 						</textarea>
