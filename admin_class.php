@@ -291,12 +291,12 @@ Class Action {
 			return 1;
 		}
 	}
-	// function delete_task(){
-	// 	extract($_POST);
-	// 	$delete = $this->db->query("DELETE FROM task_list where id = $id");
-	// 	if($delete){
-	// 		return 1;
-	// 	}
+	function delete_task(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM task_list where id = $id");
+		if($delete){
+			return 1;
+		}
 	}
 	function save_progress(){
 		extract($_POST);
